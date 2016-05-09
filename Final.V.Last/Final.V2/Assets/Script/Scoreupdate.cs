@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 public class Scoreupdate : MonoBehaviour
 {
-	public Text Scoretext; 
+	public Text ScoreText; 
 	public int Score;
 
     public void ScoreAdd()
 	{
 		Score += 1; 
-		Scoretext.text = "Score: " + Score.ToString();	
+		ScoreText.text = "Score: " + Score.ToString();	
 	}
     void Update()
     {

@@ -73,7 +73,6 @@ public class PointManager : MonoBehaviour
         objBlockWall.transform.position = new Vector3( xRandom, yBlockWall, 32.4f);
         
     }
-	// Update is called once per frame
 	void Update ()
     {
 	       

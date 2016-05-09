@@ -9,20 +9,6 @@ public class Controller_Down : MonoBehaviour
 	public Button buttonclickup;
 	public Button buttonclickdown; 
 
-	public void OnClickDown()
-	{
-		if (Numbuttondown < 7)
-        {
-			transform.Rotate (new Vector3 (1, 0, 0), 5);
-            buttonclickup.enabled = true; 
-			Numbuttondown++;
-			Numbuttonup--;
-		} 
-		if(Numbuttondown > 7)
-        {
-            buttonclickdown.enabled = false;  	
-		}
-	}
 	public void OnClickUp()
 	{
 		if (Numbuttonup < 7)
@@ -37,6 +23,20 @@ public class Controller_Down : MonoBehaviour
             buttonclickdown.enabled = false; 
 		}
 	}
+    public void OnClickDown()
+    {
+        if (Numbuttondown < 7)
+        {
+            transform.Rotate(new Vector3(1, 0, 0), 5);
+            buttonclickup.enabled = true;
+            Numbuttondown++;
+            Numbuttonup--;
+        }
+        if (Numbuttondown > 7)
+        {
+            buttonclickdown.enabled = false;
+        }
+    }
     void Update()
     {
 

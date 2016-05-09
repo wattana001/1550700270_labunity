@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 public class CheckAmmo : MonoBehaviour
 {
-	private Controller_Button conContrller;
-	private Scoreupdate conScoreupdate; 
+	private Controller_Button Controller;
+	private Scoreupdate controScoreupdate; 
 
 	void Start ()
     {
@@ -12,7 +12,7 @@ public class CheckAmmo : MonoBehaviour
 
 		if (isconScoreupdate != null)
         {
-			conScoreupdate = isconScoreupdate.GetComponent<Scoreupdate>();
+            controScoreupdate = isconScoreupdate.GetComponent<Scoreupdate>();
 		}
 		if (isconScoreupdate == null)
         {
@@ -23,7 +23,7 @@ public class CheckAmmo : MonoBehaviour
 		GameObject iscontroller = GameObject.FindGameObjectWithTag ("conNexButton");
 	    if(iscontroller != null)
 		{
-			conContrller = iscontroller.GetComponent<Controller_Button>();
+            Controller = iscontroller.GetComponent<Controller_Button>();
 		}
 		if (iscontroller == null)
         {
@@ -34,22 +34,22 @@ public class CheckAmmo : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Wall")
         {
-			Destroy(gameObject); 
-			conContrller.shootNext = true;
+			Destroy(gameObject);
+            Controller.ShootNext = true;
 		}
 		if (other.gameObject.tag == "Point")
         {
 			Destroy(gameObject);
 			Destroy(other.gameObject);
-			conScoreupdate.ScoreAdd();
-			conContrller.shootNext = true;
+            controScoreupdate.ScoreAdd();
+            Controller.ShootNext = true;
             PointManager.Instance.randomPoint();
            
 		}
 		if (other.gameObject.tag == "Wall3")
         {
-			Destroy(gameObject); 
-			conContrller.shootNext = true;
+			Destroy(gameObject);
+            Controller.ShootNext = true;
 		}
 	}
     void Update()

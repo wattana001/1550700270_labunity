@@ -6,26 +6,26 @@ public class Controller_Button : MonoBehaviour
 	public Button game; 
 	public GameObject Ammo; 
 	public Transform SpawnPoint; 
-	public int AmmoValue = 10;
+	public int NumberAmmo = 15;
 	public Text AmmoText; 
-	public bool shootNext;
+	public bool ShootNext;
 	public GameObject Parnel; 
 	void Start ()
     {
-		shootNext = true;
+		ShootNext = true;
 		Parnel.SetActive (false); 
 	}
 
 	public void OnClickShoot()
 	{
-		if (shootNext == true && AmmoValue >=	 1)
+		if (ShootNext == true && NumberAmmo >=	 1)
         {
-			AmmoValue -= 1;
-			AmmoText.text = "Bullet: "+AmmoValue.ToString();
+            NumberAmmo -= 1;
+			AmmoText.text = "Bullet: "+ NumberAmmo.ToString();
 			Instantiate (Ammo, SpawnPoint.transform.position, Quaternion.identity);
-			shootNext = false;
+			ShootNext = false;
 		}
-		if (AmmoValue <= 0)
+		if (NumberAmmo <= 0)
         {
 			Parnel.SetActive (true); 
 		}
