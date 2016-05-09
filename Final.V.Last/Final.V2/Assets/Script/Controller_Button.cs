@@ -10,17 +10,10 @@ public class Controller_Button : MonoBehaviour
 	public Text AmmoText; 
 	public bool shootNext;
 	public GameObject Parnel; 
-	// Use this for initialization
 	void Start ()
     {
 		shootNext = true;
 		Parnel.SetActive (false); 
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
 	}
 
 	public void OnClickShoot()
@@ -45,7 +38,8 @@ public class Controller_Button : MonoBehaviour
 	{
 		Application.LoadLevel("Screen01");
 	}
+    void Update()
+    {
 
-
-
+    }
 }

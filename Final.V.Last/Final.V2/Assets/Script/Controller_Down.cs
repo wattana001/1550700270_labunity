@@ -4,48 +4,41 @@ using UnityEngine.UI;
 public class Controller_Down : MonoBehaviour
 {
 	public Quaternion rotation = Quaternion.identity;
-	public int countbuttondown = 0;
-	public int countbutonup = 0;
-	public Button btnclickup;
-	public Button btnclickdown; 
+	public int Numbuttondown = 0;
+	public int Numbuttonup = 0;
+	public Button buttonclickup;
+	public Button buttonclickdown; 
 
-	// Use this for initialization
-	void Start ()
-    {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
 	public void OnClickDown()
 	{
-		if (countbuttondown < 6)
+		if (Numbuttondown < 7)
         {
 			transform.Rotate (new Vector3 (1, 0, 0), 5);
-			btnclickup.enabled = true; 
-			countbuttondown++;
-			countbutonup--;
+            buttonclickup.enabled = true; 
+			Numbuttondown++;
+			Numbuttonup--;
 		} 
-		if(countbuttondown > 6)
+		if(Numbuttondown > 7)
         {
-			btnclickdown.enabled = false;  	
+            buttonclickdown.enabled = false;  	
 		}
 	}
 	public void OnClickUp()
 	{
-		if (countbutonup < 6)
+		if (Numbuttonup < 7)
         {
 			transform.Rotate (new Vector3 (-1, 0, 0), 5);
-			btnclickup.enabled = true; 
-			countbutonup++;
-			countbuttondown--;
+            buttonclickup.enabled = true; 
+			Numbuttonup++;
+			Numbuttondown--;
 		} 
-		if(countbutonup > 6)
+		if(Numbuttonup > 7)
         {
-			btnclickdown.enabled = false; 
+            buttonclickdown.enabled = false; 
 		}
 	}
+    void Update()
+    {
+
+    }
 }

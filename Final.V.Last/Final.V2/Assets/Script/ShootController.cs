@@ -3,43 +3,33 @@ using System.Collections;
 using UnityEngine.UI;
 public class ShootController : MonoBehaviour
 {
-	private Slider mSlider; 
-	private ammo_addforce conammo; 
-	public GameObject ammo; 
-	void Awake()
-	{
-		mSlider = this.GetComponent<Slider> ();
-	}
-
-	// Use this for initialization
-	void Start ()
+    private Slider mSlider;
+    private Speed conammo;
+    public GameObject ammo;
+    void Awake()
     {
-		GameObject isconammo = GameObject.FindGameObjectWithTag ("Ammo");
-		if (isconammo != null)
-        {
-			conammo = isconammo.GetComponent<ammo_addforce>();
-		}
-		if (isconammo == null)
-        {
-			Debug.Log("Error");
-		}
+        mSlider = this.GetComponent<Slider>();
+    }
 
-	}
-	
-	// Update is called once per frame
-	void FixUpdate ()
+    void Start()
     {
-		
-		
-	}
-
-	public void OnSlider()
-	{
-        if(conammo != null)
+        GameObject isconammo = GameObject.FindGameObjectWithTag("Bullet");
+        if (isconammo != null)
         {
-            conammo.setspeed = mSlider.value;
+            conammo = isconammo.GetComponent<Speed>();
         }
-		  
-	}
+        if (isconammo == null)
+        {
+            Debug.Log("Error");
+        }
 
+    }
+
+    public void OnSlider()
+    {
+        if (conammo != null)
+        {
+            conammo.speed = mSlider.value;
+        }
+    }
 }

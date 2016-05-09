@@ -6,8 +6,6 @@ public class CheckAmmo : MonoBehaviour
 	private Controller_Button conContrller;
 	private Scoreupdate conScoreupdate; 
 
-
-	// Use this for initialization
 	void Start ()
     {
 		GameObject isconScoreupdate = GameObject.FindGameObjectWithTag ("Scoreupdate");
@@ -21,9 +19,9 @@ public class CheckAmmo : MonoBehaviour
 			Debug.Log("ERROR"); 
 		}
 
-	
+
 		GameObject iscontroller = GameObject.FindGameObjectWithTag ("conNexButton");
-	if(iscontroller != null)
+	    if(iscontroller != null)
 		{
 			conContrller = iscontroller.GetComponent<Controller_Button>();
 		}
@@ -31,17 +29,6 @@ public class CheckAmmo : MonoBehaviour
         {
 			Debug.Log("Error"); 
 		}
-	}
-	
-    public void creatPointWall()
-    {
-        
-    }
-    
-	// Update is called once per frame
-	void Update ()
-    {
-	
 	}
 	void OnCollisionEnter(Collision other)
 	{
@@ -65,4 +52,8 @@ public class CheckAmmo : MonoBehaviour
 			conContrller.shootNext = true;
 		}
 	}
+    void Update()
+    {
+
+    }
 }
